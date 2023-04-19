@@ -22,43 +22,43 @@ module.exports = function Shablon({ userSession }) {
         <div className="inputs">
           <h4>Нужно подготовить твое рабочее место:</h4> 
           <div className="check">
-          <input type="checkbox" name="task1" /><div>Наставник выдал мне пропуск</div>
+          <input type="checkbox" name="task1"  defaultChecked={0}/><div>Наставник выдал мне пропуск</div> 
           </div>
           <div className="check">
-            <input type="checkbox" name="task2" /><div>Наставник сообщил пароль от Wi-Fi</div>
+            <input type="checkbox" name="task2" defaultChecked={0}/><div>Наставник сообщил пароль от Wi-Fi</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task3" /><div>Системный администратор выдал мне ноутбук</div>
+            <input type="checkbox" name="task3" defaultChecked={0}/><div>Системный администратор выдал мне ноутбук</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task4" /><div>Системный администратор выдал мне доступы к почте</div>
+            <input type="checkbox" name="task4" defaultChecked={0}/><div>Системный администратор выдал мне доступы к почте</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task5" /><div>Ты отправил(-а) офис-менеджеру на почту список необходимой для тебя канцелярии</div>
+            <input type="checkbox" name="task5" defaultChecked={0}/><div>Ты отправил(-а) офис-менеджеру на почту список необходимой для тебя канцелярии</div>
           </div>
           <h4>Важно познакомиться с коллегами:</h4> 
           <div className="check">
-            <input type="checkbox" name="task6" /><div>Ты познакомился (-ась) со своим руководителем</div>
+            <input type="checkbox" name="task6" defaultChecked={0}/><div>Ты познакомился (-ась) со своим руководителем</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task7" /><div>Ты написал(-а) сообщение в командный чат</div>
+            <input type="checkbox" name="task7" defaultChecked={0}/><div>Ты написал(-а) сообщение в командный чат</div>
           </div>
           <div className="check">
             <div>Напиши имена трех твоих коллег по отделу:</div><input type="text" className="form-shablon" name="task8" />
           </div>
           <h4>Важно пройти оформление в отделе кадров:</h4> 
           <div className="check">
-            <input type="checkbox" name="task9" /><div>Ты отправил (-а) сканы документов на оформление в отдел кадров</div>
+            <input type="checkbox" name="task9" defaultChecked={0}/><div>Ты отправил (-а) сканы документов на оформление в отдел кадров</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task10" /><div>Ты подписал (-а) соглашение о коммерческой тайне</div>
+            <input type="checkbox" name="task10" defaultChecked={0}/><div>Ты подписал (-а) соглашение о коммерческой тайне</div>
           </div>
           <h4>А теперь самое время работать:</h4>
           <div className="check">
-            <input type="checkbox" name="task11" /><div>Получи свою первую задачу у руководителя</div>
+            <input type="checkbox" name="task11" defaultChecked={0}/><div>Получи свою первую задачу у руководителя</div>
           </div>
           <div className="check">
-            <input type="checkbox" name="task12" /><div>Создай подпись в почте по корпоративному шаблону</div>
+            <input type="checkbox" name="task12" defaultChecked={0}/><div>Создай подпись в почте по корпоративному шаблону</div>
           </div><br />
           Классного путешествия! <br /> Команда Высокой горы 💚
         </div><br />
@@ -68,16 +68,3 @@ module.exports = function Shablon({ userSession }) {
     </Layout>
   );
 };
-// <!DOCTYPE html>
-// <html>
-// <body>
-
-// Checkbox: <input type="checkbox" id="myCheck">
-
-// <button onclick="check()">Check Checkbox</button>
-// <button onclick="uncheck()">Uncheck Checkbox</button>
-
-
-
-// </body>
-// </html>

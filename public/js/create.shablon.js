@@ -30,7 +30,7 @@ const inputDiv = document.querySelector(".inputs")
 inputDiv.addEventListener('click', async (e) => {
    
     if(e.target.tagName === 'INPUT') {
-        console.log(e.target.name)
+        e.target.checked = 1
     }
 })
 

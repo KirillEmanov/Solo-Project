@@ -11,8 +11,8 @@ router.get('/shablon', async (req, res) => {
 
 router.post('/shablon', async (req, res) => {
     try {
-        const { employee, userId} = req.body;
-        const newShablon = await Shablon.create({ employee, userId });
+        const { task1, task2, task3, task4, task5, employee, userId} = req.body;
+        const newShablon = await Shablon.create({ task1, task2, task3, task4, task5, employee, userId });
         res.json(newShablon)
     } catch (error){
         console.log(error)
