@@ -22,6 +22,7 @@ const logOutRouter = require('./src/routes/logOutRouter');
 const usersRouter = require('./src/routes/usersRouter');
 const allListsRouter = require('./src/routes/allListsRouter');
 const myListRouter = require('./src/routes/myListsRouter');
+const shablonRouter = require('./src/routes/shablon.router')
 
 
 const sessionConfig = {
@@ -53,7 +54,7 @@ app.use('/logout', logOutRouter);
 app.use('/alllists', allListsRouter);
 app.use('/mylists', myListRouter);
 app.use('/users', usersRouter);
-
+app.use('/', shablonRouter);
 
 
 // app.use('*', mainRouter);
