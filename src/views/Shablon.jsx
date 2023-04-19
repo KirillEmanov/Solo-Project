@@ -4,7 +4,7 @@ const Layout = require("./Layout");
 module.exports = function Shablon({ userSession }) {
   return (
     <Layout userSession={userSession}>
-      {/* <script defer src="js/registration.js" /> */}
+      <script defer src="js/create.shablon.js" />
       <form name="createShablon" method="POST" action='/shablon'>
       <div className="shablon"><br />
         <div className="greetings">
@@ -19,10 +19,10 @@ module.exports = function Shablon({ userSession }) {
           выполнения будет сохраняться, поэтому ты можешь закрывать пункты
           <br />в удобном для тебя порядке.
         </div>
-        <div>
+        <div className="inputs">
           <h4>Нужно подготовить твое рабочее место:</h4> 
           <div className="check">
-            <input type="text" name="task1" /><div>Наставник выдал мне пропуск</div>
+          <input type="checkbox" name="task1" /><div>Наставник выдал мне пропуск</div>
           </div>
           <div className="check">
             <input type="checkbox" name="task2" /><div>Наставник сообщил пароль от Wi-Fi</div>
@@ -68,3 +68,16 @@ module.exports = function Shablon({ userSession }) {
     </Layout>
   );
 };
+// <!DOCTYPE html>
+// <html>
+// <body>
+
+// Checkbox: <input type="checkbox" id="myCheck">
+
+// <button onclick="check()">Check Checkbox</button>
+// <button onclick="uncheck()">Uncheck Checkbox</button>
+
+
+
+// </body>
+// </html>
