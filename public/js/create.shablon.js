@@ -33,25 +33,3 @@ inputDiv.addEventListener('click', async (e) => {
         e.target.checked = 1
     }
 })
-
-// ol.addEventListener("click", async (e) => {
-//     e.preventDefault()
-//     // const data = new FormData(ol)
-//     if(e.target.classList.contains("ShowListBtn")){
-//         console.log("button pressed")
-//         window.location.href = `/alllists/${e.target.id}`
-//     }
-// })
-// 
-// ! Слушатель на родителя
-
-
-// function check() {
-//   document.getElementById("myCheck").checked = true;
-// }
-
-// function uncheck() {
-//   document.getElementById("myCheck").checked = false;
-// }
-
-
