@@ -15,6 +15,14 @@ const isAuth = require('./src/middlewares/isAuth');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const mainRouter = require('./src/routes/mainRouter');
+const regRouter = require('./src/routes/regRouter');
+const logRouter = require('./src/routes/logRouter');
+const logOutRouter = require('./src/routes/logOutRouter');
+const usersRouter = require('./src/routes/usersRouter');
+const allListsRouter = require('./src/routes/allListsRouter');
+const myListRouter = require('./src/routes/myListsRouter');
+
 
 const sessionConfig = {
   name: 'Cookie',
@@ -37,6 +45,15 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
+
+app.use('/', mainRouter);
+app.use('/registration', regRouter);
+app.use('/login', logRouter);
+app.use('/logout', logOutRouter);
+app.use('/alllists', allListsRouter);
+app.use('/mylists', myListRouter);
+app.use('/users', usersRouter);
+
 
 
 // app.use('*', mainRouter);
