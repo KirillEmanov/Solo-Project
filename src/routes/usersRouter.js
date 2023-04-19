@@ -7,4 +7,4 @@ router.get('/', async (req, res) => {
   renderTemplate(Users, {}, res, req);
 });
 
-module.exports = router;пше
+module.exports = router;
