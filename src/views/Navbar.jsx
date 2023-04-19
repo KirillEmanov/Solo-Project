@@ -1,11 +1,10 @@
 const React = require('react');
 
 module.exports = function Navbar({ userSession }) {
-  const user = userSession.user;
-
+ 
   return (
     <nav className="navigation">
-      {user ? (
+      {userSession.user ? (
         <>
           <a href="/alllists" className="nav-link">
             Все листки адаптации
@@ -13,7 +12,7 @@ module.exports = function Navbar({ userSession }) {
           <a href="/mylists" className="nav-link">
             Мои листки адаптации
           </a>
-          {user.role ? (
+          {userSession.role ? (
             <>
               <a href="/users" className="nav-link">
                 Пользователи
