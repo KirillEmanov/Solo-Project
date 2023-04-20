@@ -10,11 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.User, {foreignKey: "userId"})
+      this.belongsTo(models.User, { foreignKey: "userId" })
     }
   }
   Shablon.init({
     employee: DataTypes.STRING,
+    leader: DataTypes.STRING,
     task1: DataTypes.BOOLEAN,
     task2: DataTypes.BOOLEAN,
     task3: DataTypes.BOOLEAN,
