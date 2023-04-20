@@ -9,11 +9,11 @@ const ProgressBars = document.querySelectorAll(".progressBar")
 ProgressBars.forEach((el) => {{
     const percent = Number(el.value)
     if (percent < 50){
-        el.style.backgroundColor = "red";
+        el.style.backgroundColor = "rgb(241, 121, 51)";
     }else if (percent >= 50 && percent < 80){
-        el.style.backgroundColor = "yellow";
+        el.style.backgroundColor = "rgb(205, 219, 83)";
     }else{
-        el.style.backgroundColor = "green";
+        el.style.backgroundColor = "rgb(4, 113, 2)";
     }
 }})
 
