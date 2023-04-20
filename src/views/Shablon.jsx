@@ -12,7 +12,7 @@ module.exports = function Shablon({ userSession }) {
           И добро пожаловать в команду Высокогорья!
           <br />
           Впереди нас ждет интересное путешествие в мир нашей
-          <br /> компании, и самым главным проводником будет- <input type="text" className="form-shablon" name="userId"/>
+          <br /> компании, и самым главным проводником будет- { userSession.user }<input type="text" className="form-shablon" name="userId" value={ userSession.userId }/>
           <br />
           Мы подготовили для тебя чек-лист на первый день. Процесс
           <br />
