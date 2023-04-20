@@ -1,17 +1,15 @@
 const React = require("react");
-const Layout = require("./Layout");
 
-
-module.exports = function ShablonForm({ el }) {
+module.exports = function EditShablon({ el, us }) {
   return (
-      <form name="BackFromShablon">
+      <form name="editForm" data-formid={el.id}>
         <div className="shablonShow"><br />
             <div className="greetings">
             Привет, {el.employee} <br />
             И добро пожаловать в команду Высокогорья!
             <br />
             Впереди нас ждет интересное путешествие в мир нашей
-            <br /> компании, и самым главным проводником будет- {el.leader}
+            <br /> компании, и самым главным проводником будет- {us}
             <br />
             Мы подготовили для тебя чек-лист на первый день. Процесс
             <br />
@@ -43,7 +41,7 @@ module.exports = function ShablonForm({ el }) {
             <div><input type="checkbox" name="task7" defaultChecked={el.task7} />Ты написал(-а) сообщение в командный чат</div>
             </div>
             <div className="check">
-                <div>Напиши имена трех твоих коллег по отделу: {el.task8}
+                <div>Напиши имена трех твоих коллег по отделу: <input type="text" name="task8" defaultValue={el.task8}/>
             </div>
             <h4>Важно пройти оформление в отделе кадров:</h4> 
             <div className="check">
@@ -61,14 +59,7 @@ module.exports = function ShablonForm({ el }) {
             </div><br />
             Классного путешествия! <br /> Команда Высокой горы 💚
             </div><br />
-            <form name="backtoall">
-            <div className="backtoalllist">
-                <button className="BackBtn">Показать все листы</button>
-            </div>
-            <div className="BackToMyLists">
-                <button className="BackToMyListsBtn">Вернуться к моим листам</button>
-            </div>
-            </form>
+            <button type="submit" className="createShablon">Редактировать запись</button>
             </div>
         </div>
       </form>

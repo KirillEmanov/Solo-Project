@@ -4,15 +4,15 @@ const Layout = require("./Layout");
 module.exports = function Shablon({ userSession }) {
   return (
     <Layout userSession={userSession}>
-      <script defer src="js/create.shablon.js" />
-      <form name="createShablon" method="POST" action='/shablon'>
+      <script defer src="/js/create.shablon.js" />
+      <form name="createShablon" method="POST" action='/mylists/shablon'>
       <div className="shablon"><br />
         <div className="greetings">
           Привет, <input type="text" className="form-shablon" name="employee"/> <br />
           И добро пожаловать в команду Высокогорья!
           <br />
           Впереди нас ждет интересное путешествие в мир нашей
-          <br /> компании, и самым главным проводником будет- <input type="text" className="form-shablon" name="userId"/>
+          <br /> компании, и самым главным проводником будет- { userSession.user }<input type="text" className="form-shablon" name="userId" value={ userSession.userId }/>
           <br />
           Мы подготовили для тебя чек-лист на первый день. Процесс
           <br />
