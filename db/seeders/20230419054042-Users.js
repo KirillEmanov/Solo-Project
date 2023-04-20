@@ -3,13 +3,13 @@ const array = [
   {
     name: "Сергей Мазаев",
     email: "podkapot@magia.ge",
-    password: "1",
+    password: "$2b$10$w2AItJTGZJARrwmiIQEGUOPS1TT7mVD04BsiIgVZ8VbU9dacfA2Pu",
     role: true,
   },
   {
     name: "Денис Образцов",
     email: "proverim@podkapot.ru",
-    password: "2",
+    password: "$2b$10$vKkW3bS/PMVkTgm/KGSVA.o.TMf1Wd0/7vjsN6NpowOEd8v0uHTRW",
     role: false,
   }
 ]

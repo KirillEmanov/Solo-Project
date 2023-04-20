@@ -60,4 +60,22 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:name', async (req, res) => {
+  const { name } = req.params;
+
+  try {
+    const user = await User.findOne({ where: { name } });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    await user.destroy();
+    res.sendStatus(204);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 module.exports = router;

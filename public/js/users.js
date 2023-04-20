@@ -98,7 +98,8 @@ addUserButton.addEventListener('click', (event) => {
   modal.appendChild(form);
 
   // добавляем модальное окно на страницу
-  document.querySelector("#backgroundContainer > div > button").appendChild(modal);
+  const userList = document.querySelector('#userList');
+  userList.parentNode.insertBefore(modal, userList);
 
   // обработчик события для отправки формы
   form.addEventListener('submit', async (event) => {
@@ -177,6 +178,28 @@ addUserButton.addEventListener('click', (event) => {
           console.log(error);
         }
       });
+    } catch (error) {
+      console.log(error);
+    }
+  });
+});
+
+const deleteUserButtons = document.querySelectorAll('.deleteUserButton');
+
+deleteUserButtons.forEach((deleteUserButton) => {
+  deleteUserButton.addEventListener('click', async (event) => {
+    const userName = event.target.parentNode.querySelector('.name').textContent;
+
+    try {
+      const response = await fetch(`/users/${userName}`, {
+        method: 'DELETE',
+      });
+
+      if (response.status === 204) {
+        event.target.parentNode.remove();
+      } else {
+        console.log('Failed to delete user.');
+      }
     } catch (error) {
       console.log(error);
     }

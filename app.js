@@ -39,7 +39,7 @@ const sessionConfig = {
 };
 app.use(session(sessionConfig));
 app.use('/login', (req, res, next) => {
-  console.log('session=>', req.session);
+  // console.log('session=>', req.session);
   next();
 });
 

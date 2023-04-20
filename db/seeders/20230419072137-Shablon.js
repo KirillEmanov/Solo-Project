@@ -15,7 +15,7 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 1
+    userId: null
   },
   {
     employee: "Viper",
@@ -32,7 +32,7 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 1
+    userId: null
   },
   {
     employee: "Kirill",
@@ -49,7 +49,7 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 2
+    userId: null
   },
   {
     employee: "Aleksandr",
@@ -66,7 +66,7 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 2
+    userId: null
   }
 ]
 /** @type {import('sequelize-cli').Migration} */
