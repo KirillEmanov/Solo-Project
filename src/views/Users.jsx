@@ -7,6 +7,7 @@ module.exports = function Users({ userSession, userList }) {
       <script defer src="js/users.js" />
       <div className="usersContainer">
         <h1>Пользователи</h1>
+        <button className="addUserButton">Добавить нового пользователя</button>
         <ul>
           {userList.map((user) => (
             <li key={user.name}>
