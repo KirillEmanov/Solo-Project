@@ -54,6 +54,18 @@ addUserButton.addEventListener('click', (event) => {
   nameInput.setAttribute('placeholder', 'Имя пользователя');
   form.appendChild(nameInput);
 
+  const emailInput = document.createElement('input');
+  emailInput.setAttribute('type', 'email');
+  emailInput.setAttribute('name', 'email');
+  emailInput.setAttribute('placeholder', 'Email');
+  form.appendChild(emailInput);
+
+  const passwordInput = document.createElement('input');
+  passwordInput.setAttribute('type', 'password');
+  passwordInput.setAttribute('name', 'password');
+  passwordInput.setAttribute('placeholder', 'Пароль');
+  form.appendChild(passwordInput);
+
   const roleInput = document.createElement('select');
   roleInput.setAttribute('name', 'role');
   const userOption = document.createElement('option');
@@ -86,7 +98,7 @@ addUserButton.addEventListener('click', (event) => {
   modal.appendChild(form);
 
   // добавляем модальное окно на страницу
-  document.body.appendChild(modal);
+  document.querySelector("#backgroundContainer > div > button").appendChild(modal);
 
   // обработчик события для отправки формы
   form.addEventListener('submit', async (event) => {
@@ -102,6 +114,8 @@ addUserButton.addEventListener('click', (event) => {
         },
         body: JSON.stringify({
           name: formData.get('name'),
+          email: formData.get('email'),
+          password: formData.get('password'),
           role: formData.get('role') === 'true',
         }),
       });
@@ -137,6 +151,8 @@ addUserButton.addEventListener('click', (event) => {
             },
             body: JSON.stringify({
               name: event.target.parentNode.firstChild.textContent,
+              email: updatedUser.email,
+              password: updatedUser.password,
               role: event.target.value === 'true',
             }),
           });
@@ -151,6 +167,10 @@ addUserButton.addEventListener('click', (event) => {
               userListItem.querySelector('.role').textContent = updatedUser.role
                 ? 'Администратор'
                 : 'Пользователь';
+              userListItem.querySelector('.email').textContent =
+                updatedUser.email;
+              userListItem.querySelector('.password').textContent =
+                updatedUser.password;
             }
           });
         } catch (error) {

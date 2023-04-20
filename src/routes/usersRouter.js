@@ -3,6 +3,7 @@ const router = express.Router();
 const Users = require('../views/Users');
 const renderTemplate = require('../lib/renderTemplate');
 const { User } = require('../../db/models');
+const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
   try {
@@ -38,14 +39,20 @@ router.put('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { name, role } = req.body;
+    const { name, email, password, role } = req.body;
     const existingUser = await User.findOne({ where: { name }, raw: true });
 
     if (existingUser) {
       return res.status(400).send('User already exists');
     }
 
-    const newUser = await User.create({ name, role });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+      role,
+    });
     res.status(201).json(newUser);
   } catch (error) {
     console.log(error);
