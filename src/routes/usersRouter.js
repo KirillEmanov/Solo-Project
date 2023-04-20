@@ -36,5 +36,21 @@ router.put('/', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { name, role } = req.body;
+    const existingUser = await User.findOne({ where: { name }, raw: true });
+
+    if (existingUser) {
+      return res.status(400).send('User already exists');
+    }
+
+    const newUser = await User.create({ name, role });
+    res.status(201).json(newUser);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
 
 module.exports = router;
