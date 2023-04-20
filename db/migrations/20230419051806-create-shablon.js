@@ -78,7 +78,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date()
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {

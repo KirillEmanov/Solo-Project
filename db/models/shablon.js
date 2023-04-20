@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     task10: DataTypes.BOOLEAN,
     task11: DataTypes.BOOLEAN,
     task12: DataTypes.BOOLEAN,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Shablon',
