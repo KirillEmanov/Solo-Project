@@ -58,3 +58,7 @@
 .w3-pale-green,.w3-hover-pale-green:hover{color:#000;background-color:#ddffdd}
 .w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000;background-color:#ffffcc}
 .w3-pale-blue,.w3-hover-pale-blue:hover{color:#000;background-color:#ddffff}
+
+.progressBar{
+    color: rgb(15, 18, 14)
+}

@@ -25,13 +25,16 @@ router.get('/', async (req, res) => {
           }
         }
       }
+      el.sortByTaskDone = taskComplite
       el.percent = Math.floor((taskComplite / taskCount) * 100);
     });
+    Coopers.sort((a, b) => a.sortByTaskDone - b.sortByTaskDone)
     renderTemplate(AllLists, { Coopers }, res, req);
   } catch (error) {
     console.log(error);
   }
 });
+
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
