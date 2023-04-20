@@ -2,6 +2,7 @@
 const array = [
   {
     employee: "Nikita",
+    leader: "Salamaleykym",
     task1: false,
     task2: false,
     task3: false,
@@ -14,10 +15,11 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 1
+    userId: 7
   },
   {
     employee: "Viper",
+    leader: "Brimstoune",
     task1: false,
     task2: false,
     task3: false,
@@ -30,10 +32,11 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 1
+    userId: 7
   },
   {
     employee: "Kirill",
+    leader: "Fkankenshtein",
     task1: false,
     task2: false,
     task3: false,
@@ -46,10 +49,11 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 2
+    userId: 8
   },
   {
     employee: "Aleksandr",
+    leader: "Abramovich",
     task1: false,
     task2: false,
     task3: false,
@@ -62,7 +66,7 @@ const array = [
     task10: false,
     task11: false,
     task12: false,
-    userId: 2
+    userId: 8
   }
 ]
 /** @type {import('sequelize-cli').Migration} */

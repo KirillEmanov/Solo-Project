@@ -12,6 +12,10 @@ module.exports = {
       employee: {
         type: Sequelize.STRING
       },
+      leader: {
+        type: Sequelize.STRING,
+        defaultValue: "",
+      },
       task1: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
@@ -42,7 +46,7 @@ module.exports = {
       },
       task8: {
         type: Sequelize.STRING,
-        defaultValue: ""
+        defaultValue: "",
       },
       task9: {
         type: Sequelize.BOOLEAN,
