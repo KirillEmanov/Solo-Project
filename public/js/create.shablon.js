@@ -7,7 +7,7 @@ createShablon.addEventListener('submit', async (e) => {
     console.log('HI Alex!')
 
     try {
-        const response = await fetch('/shablon', {
+        const response = await fetch('/mylists/shablon', {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'

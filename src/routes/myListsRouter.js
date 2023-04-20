@@ -4,6 +4,7 @@ const MyLists = require('../views/MyLists');
 const renderTemplate = require('../lib/renderTemplate');
 const { Shablon, User } = require("../../db/models");
 const ShowShablon = require("../views/ShowShablon");
+const Shablons = require('../views/Shablon');
 
 router.get('/', async (req, res) => {
   try {
@@ -15,6 +16,21 @@ router.get('/', async (req, res) => {
     console.log(error);
   }
 });
+
+router.get('/shablon', async (req, res) => {
+  renderTemplate(Shablons, {}, res, req);
+});
+
+router.post('/shablon', async (req, res) => {
+    try {
+        const { task1, task2, task3, task4, task5, employee, userId} = req.body;
+        const newShablon = await Shablon.create({ task1, task2, task3, task4, task5, employee, userId });
+        res.json(newShablon)
+    } catch (error){
+        console.log(error)
+        res.send(error)
+    }
+})
 
 router.get('/:id', async (req, res) => {
   try {
@@ -28,5 +44,28 @@ router.get('/:id', async (req, res) => {
     res.send(error)
   }
 });
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Shablon.destroy({ where: { id } });
+    // res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+  return res.redirect('/mylists');
+});
+
+
+
+// router.delete('/entry/:id', async (req, res) => {
+//   try {
+//     await Entry.destroy({ where: { id: req.params.id } });
+//   } catch (error) {
+//     console.error(error);
+//   }
+//   return res.redirect('/all-the-entries');
+// });
 
 module.exports = router;

@@ -22,7 +22,8 @@ const logOutRouter = require('./src/routes/logOutRouter');
 const usersRouter = require('./src/routes/usersRouter');
 const allListsRouter = require('./src/routes/allListsRouter');
 const myListRouter = require('./src/routes/myListsRouter');
-const shablonRouter = require('./src/routes/shablon.router')
+// const shablonRouter = require('./src/routes/shablon.router')
+const editShablonRouter = require('./src/routes/edit.shablon.router')
 
 
 const sessionConfig = {
@@ -48,14 +49,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(dbCheck);
 
 app.use('/', mainRouter);
+app.use('/profile', editShablonRouter);
 app.use('/registration', regRouter);
 app.use('/login', logRouter);
 app.use('/logout', logOutRouter);
 app.use('/alllists', allListsRouter);
 app.use('/mylists', myListRouter);
 app.use('/users', usersRouter);
-app.use('/', shablonRouter);
-
+// app.use('/', shablonRouter);
 
 // app.use('*', mainRouter);
 

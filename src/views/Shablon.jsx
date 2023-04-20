@@ -4,8 +4,8 @@ const Layout = require("./Layout");
 module.exports = function Shablon({ userSession }) {
   return (
     <Layout userSession={userSession}>
-      <script defer src="js/create.shablon.js" />
-      <form name="createShablon" method="POST" action='/shablon'>
+      <script defer src="/js/create.shablon.js" />
+      <form name="createShablon" method="POST" action='/mylists/shablon'>
       <div className="shablon"><br />
         <div className="greetings">
           Привет, <input type="text" className="form-shablon" name="employee"/> <br />
