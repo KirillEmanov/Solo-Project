@@ -36,10 +36,8 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const CoopersShow = await Shablon.findOne({ where: { id } })
-    const UserForShowShablon = await User.findOne({ where: { id: CoopersShow.userId } })
-    const nameUser = await UserForShowShablon.name
     // res.json(CoopersShow)
-    renderTemplate(ShowShablon, { CoopersShow, nameUser }, res, req)
+    renderTemplate(ShowShablon, { CoopersShow }, res, req)
   } catch (error) {
     console.log(error);
     res.send(error)
