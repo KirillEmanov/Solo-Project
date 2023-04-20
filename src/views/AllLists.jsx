@@ -11,8 +11,9 @@ module.exports = function AllList({ userSession, Coopers }) {
         <ol>
         {Coopers.map((el) => 
             <li>
-            {el.employee}
-            {" "}
+            {`Сотрудник: ${el.employee}`}
+            {" - "}
+            {`Листок выполнен на: ${el.percent}%`}
             <form name='ShowShablon'>
             <button className='ShowListBtn' id={el.id}>Посмотреть листок</button>
             </form>
