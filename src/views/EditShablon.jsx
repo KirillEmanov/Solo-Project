@@ -1,6 +1,6 @@
 const React = require("react");
 
-module.exports = function EditShablon({ el, us }) {
+module.exports = function EditShablon({ el }) {
   return (
       <form name="editForm" data-formid={el.id}>
         <div className="shablonShow"><br />
@@ -9,7 +9,7 @@ module.exports = function EditShablon({ el, us }) {
             И добро пожаловать в команду Высокогорья!
             <br />
             Впереди нас ждет интересное путешествие в мир нашей
-            <br /> компании, и самым главным проводником будет- {us}
+            <br /> компании, и самым главным проводником будет- {el.leader}
             <br />
             Мы подготовили для тебя чек-лист на первый день. Процесс
             <br />
