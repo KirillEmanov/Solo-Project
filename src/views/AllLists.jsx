@@ -13,7 +13,7 @@ module.exports = function AllList({ userSession, Coopers }) {
         <h1>Все листки адаптации</h1>
         {Coopers.map((el) => 
         <ol>
-          <><div></div><li className='AlllistShablons'>
+          <><li className='AlllistShablons'>
             {`Сотрудник: ${el.employee}`}
             {" "}
             <div className='w3-light-grey w3-round-large progressDiv'>

@@ -128,20 +128,32 @@ addUserButton.addEventListener('click', (event) => {
       modal.remove();
 
       // обновляем список пользователей
-      const userList = document.querySelector('.usersContainer ul');
+      const newUserContainer = document.createElement('div');
+      newUserContainer.className = 'usersContainer';
+      
+      const newUserList = document.createElement('ul');
+      newUserList.className = 'userList';
+      
       const newUserListItem = document.createElement('li');
+      newUserListItem.setAttribute('data-user-id', newUser.id);
+      newUserListItem.className = 'liGap';
+      
       newUserListItem.innerHTML = `
         <span class="name">${newUser.name}</span> - <span class="role">
           ${newUser.role ? 'Администратор' : 'Пользователь'}
         </span>
-          <select defaultValue=${newUser.role ? 'true' : 'false'}>
-            <option value="false">Пользователь</option>
-            <option value="true">Администратор</option>
-          </select>
+        <select defaultValue=${newUser.role ? 'true' : 'false'}>
+          <option value="false">Пользователь</option>
+          <option value="true">Администратор</option>
+        </select>
         <button class="resetPasswordButton">Переназначить пароль</button>
-        <button class="deleteUserButton">Удалить пользователя</button>`;
-
-      userList.appendChild(newUserListItem);
+        <button class="deleteUserButton">Удалить пользователя</button>
+      `;
+      
+      newUserList.appendChild(newUserListItem);
+      newUserContainer.appendChild(newUserList);
+      document.body.appendChild(newUserContainer);
+      
 
       // добавляем обработчик событий для нового select элемента
       const newSelectElement = newUserListItem.querySelector('select');
