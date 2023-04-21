@@ -209,7 +209,6 @@ deleteUserButtons.forEach((deleteUserButton) => {
   });
 });
 
-
 //! НЕ МОГУ ПОЛУЧИТЬ id кнопки! У меня жопа горит!!!!!!!!
 
 const resetPasswordButtons = document.querySelectorAll('.resetPasswordButton');
@@ -231,17 +230,23 @@ resetPasswordButtons.forEach((button) => {
     input.setAttribute('id', 'newPasswordInput');
 
     const userLabel = document.createElement('label');
-    userName = event.target.parentNode.firstChild.textContent
+    userName = event.target.parentNode.firstChild.textContent;
     userLabel.innerText = `Пользователь: ${userName} `;
 
     const submitButton = document.createElement('button');
     submitButton.innerText = 'Переназначить пароль';
+    const cancelButton = document.createElement('button');
+    cancelButton.innerText = 'Отмена';
 
     modal.appendChild(userLabel); // добавляем имя пользователя в модальное окно
     modal.appendChild(label);
     modal.appendChild(input);
     modal.appendChild(submitButton);
+    modal.appendChild(cancelButton); // добавляем кнопку "Отмена"
     modalWrapper.appendChild(modal);
+    cancelButton.addEventListener('click', () => {
+      modalWrapper.remove(); // закрываем модальное окно
+    });
 
     const li = event.target.closest('li');
     li.appendChild(modalWrapper);
