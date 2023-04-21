@@ -12,6 +12,7 @@ module.exports = function AllList({ userSession, Coopers }) {
       <div className="ListContainer">
         <h1 className='myListsAdapt'>Все листки адаптации</h1>
         {Coopers.map((el) => 
+
         <ol className='allListsOl'>
           <><div></div><li className='AlllistShablons '>
             <div className='empText'>
