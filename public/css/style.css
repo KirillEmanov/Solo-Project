@@ -1,5 +1,78 @@
-.check {
+.navigation {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
+.logo {
+  height: 50px;
+  margin-left: 80px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #8bc34a;
+}
+
+.nav-link.logout,
+.nav-link.auth,
+.nav-links a.right {
+  border-radius: 20px;
+  background-color: #d3d3d3;
+  color: black;
+  padding: 12px 35px;
+}
+
+.nav-link.logout:hover,
+.nav-link.auth:hover,
+.nav-links a.right:hover {
+  background-color: #a9a9a9;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links a:not(:last-child) {
+  margin-right: 50px;
+}
+
+.right {
+  margin-right: 110px;
+}
+
+.logoMain {
+  position: absolute;
+  width: 570px;
+  height: 737px;
+  left: 1046px;
+  top: 70px;
+}
+
+.message {
+  position: absolute;
+width: 800px;
+height: 321px;
+left: 100px;
+top: 254px;
+font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 140%;
+color: #000000;
+
+}
+
+.mountain{
+  font-weight: 200;
+}

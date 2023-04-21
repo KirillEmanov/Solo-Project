@@ -5,6 +5,7 @@ module.exports = function Login({ userSession }) {
   return (
     <Layout userSession={userSession}>
       <script defer src="js/login.js" />
+      <link rel="stylesheet" href="/css/login.css" />
       <div className="container">
         <h1 className="title">Авторизация пользователя</h1>
         <form name="logForm" className="form">
