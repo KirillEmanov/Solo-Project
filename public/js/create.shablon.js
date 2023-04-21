@@ -1,4 +1,5 @@
 const { createShablon } = document.forms;
+const { returnToMyLists } = document.forms;
 
 createShablon.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -21,4 +22,13 @@ createShablon.addEventListener('submit', async (e) => {
         alert('ШАБЛОН НЕ СОЗДАЛСЯ', error)
     }
     
+})
+
+returnToMyLists.addEventListener("click", async (e) => {
+    e.preventDefault()
+    // const data = new FormData(ol)
+    if(e.target.classList.contains("returnToMyListsBtn")){
+        console.log("button pressed")
+        window.location.href = '/mylists/'
+    }
 })

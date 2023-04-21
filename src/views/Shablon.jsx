@@ -64,10 +64,13 @@ module.exports = function Shablon({ userSession }) {
         </div><br />
         <div>
         <div>Сотрудник HR { userSession.user }</div>
-        <input type="text" className="form-shablo" name="userId" value={ userSession.userId }/>
+        <input type="text" className="form-shablo" name="userId" value={ userSession.userId } style={{ display: 'none' }}/>
         </div>
         <button type="submit" className="createShablon">Создать шаблон</button>
       </div>
+      </form>
+      <form name="returnToMyLists">
+      <button type="submit" className="returnToMyListsBtn">Мои листки</button>
       </form>
     </Layout>
   );
