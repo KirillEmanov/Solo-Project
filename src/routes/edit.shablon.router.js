@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const EditList = require('../views/EditList');
 const renderTemplate = require('../lib/renderTemplate');
-const { Shablon, User } = require("../../db/models");
+const { Shablon } = require("../../db/models");
 
 router.get('/show.shablon/:id', async (req, res) => {
   try {
     const { id } = req.params
     const CoopersShow = await Shablon.findOne({ where: { id } })
-    const UserForShowShablon = await User.findOne({ where: { id: CoopersShow.userId} })
-    const nameUser = await UserForShowShablon.name
-    renderTemplate(EditList, { CoopersShow, nameUser }, res, req)
+    // const LiderForShowShablon = await User.findOne({ where: { id: CoopersShow.userId} })
+    // const nameUser = await UserForShowShablon.name
+    renderTemplate(EditList, { CoopersShow }, res, req)
   } catch (error) {
     console.log(error);
     res.send(error)
