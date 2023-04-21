@@ -1,0 +1,40 @@
+.shablonShow{
+     padding: 10px;
+}
+
+.flexshowbtn{ 
+    display: flex;
+    row-gap: 20px;
+}
+.BackBtn{
+    font-family: Roboto;
+    border-radius: 8px;
+    color: #120f0f;
+    background-color: rgb(194, 192, 192);
+}
+
+.BackToMyListsBtn{
+    font-family: Roboto;
+    border-radius: 8px;
+    color: #120f0f;
+    background-color: rgb(194, 192, 192);
+}
+
+input{
+    border-radius: 50%;
+}
+
+body{
+    background: #F5F5F5;
+}
+
+.greetings{
+    font-family: Roboto;
+}
+h4{
+    font-family: Roboto;
+}
+
+.shablonShow{
+    font-family: Roboto;
+}

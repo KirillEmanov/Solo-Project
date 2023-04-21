@@ -59,6 +59,44 @@
 .w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000;background-color:#ffffcc}
 .w3-pale-blue,.w3-hover-pale-blue:hover{color:#000;background-color:#ddffff}
 
+body{
+    background: #F5F5F5;
+}
 .progressBar{
-    color: rgb(15, 18, 14)
+    color: rgb(15, 18, 14);
+    text-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-align: center;
+}
+.progressDiv{
+    width: 150px;
+    background-color: rgb(194, 192, 192);
+}
+
+ol{ 
+    display: flex;
+    flex-direction: column;
+    padding: 5mm;
+    margin: 20px;
+    gap: 3px;
+    font-family: Roboto;
+}
+
+.AlllistShablons{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+h1{
+    display: flex;
+    padding: 5mm;
+    font-family: Roboto;
+}
+.ShowListBtn{
+    font-family: Roboto;
+    border-radius: 8px;
+    color: #120f0f;
+    background-color: rgb(194, 192, 192);
 }
