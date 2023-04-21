@@ -29,9 +29,9 @@ module.exports = function Navbar({ userSession }) {
           <a href="/login" className="nav-link">
             Авторизация
           </a>
-          <a href="/registration" className="nav-link">
+          {/* <a href="/registration" className="nav-link">
             Регистрация
-          </a>
+          </a> */}
         </>
       )}
     </nav>
