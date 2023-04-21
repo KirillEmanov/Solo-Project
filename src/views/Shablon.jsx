@@ -12,7 +12,7 @@ module.exports = function Shablon({ userSession }) {
           И добро пожаловать в команду Высокогорья!
           <br />
           Впереди нас ждет интересное путешествие в мир нашей
-          <br /> компании, и самым главным проводником будет- { userSession.user }<input type="text" className="form-shablon" name="userId" value={ userSession.userId }/>
+          <br /> компании, и самым главным проводником будет - <input type="text" className="form-shablon" name="leader" value={ '' }/>
           <br />
           Мы подготовили для тебя чек-лист на первый день. Процесс
           <br />
@@ -22,7 +22,7 @@ module.exports = function Shablon({ userSession }) {
         <div className="inputs">
           <h4>Нужно подготовить твое рабочее место:</h4> 
           <div className="check">
-          <input type="checkbox" name="task1"  defaultChecked={0}/><div>Наставник выдал мне пропуск</div> 
+          <input type="checkbox" name="task1"  /><div>Наставник выдал мне пропуск</div> 
           </div>
           <div className="check">
             <input type="checkbox" name="task2" defaultChecked={0}/><div>Наставник сообщил пароль от Wi-Fi</div>
@@ -62,6 +62,10 @@ module.exports = function Shablon({ userSession }) {
           </div><br />
           Классного путешествия! <br /> Команда Высокой горы 💚
         </div><br />
+        <div>
+        <div>Сотрудник HR { userSession.user }</div>
+        <input type="text" className="form-shablo" name="userId" value={ userSession.userId }/>
+        </div>
         <button type="submit" className="createShablon">Создать шаблон</button>
       </div>
       </form>

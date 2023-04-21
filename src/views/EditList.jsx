@@ -12,4 +12,4 @@ module.exports = function EditList({ CoopersShow, userSession, nameUser }) {
         </div>
     </Layout>
   )
-}
+};
