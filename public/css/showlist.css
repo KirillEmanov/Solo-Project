@@ -7,17 +7,31 @@
     row-gap: 20px;
 }
 .BackBtn{
-    font-family: Roboto;
-    border-radius: 8px;
-    color: #120f0f;
-    background-color: rgb(194, 192, 192);
+    width: 200px;
+    height: 35px;
+    background: #989ead;
+    border-radius: 20px; 
+    margin-right: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+    border: 0px solid #000000;
 }
 
 .BackToMyListsBtn{
-    font-family: Roboto;
-    border-radius: 8px;
-    color: #120f0f;
-    background-color: rgb(194, 192, 192);
+    width: 200px;
+    height: 35px;
+    background:  #989ead;
+    border-radius: 20px; 
+    margin-right: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000000;
+    border: 0px solid #000000;
 }
 
 input{
