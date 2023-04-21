@@ -4,8 +4,9 @@ const Users = require('../views/Users');
 const renderTemplate = require('../lib/renderTemplate');
 const { User } = require('../../db/models');
 const bcrypt = require('bcrypt');
+const isAuth = require('../middlewares/isAuth');
 
-router.get('/', async (req, res) => {
+router.get('/',isAuth, async (req, res) => {
   try {
     const userList = await User.findAll({
       attributes: ['name', 'role'],

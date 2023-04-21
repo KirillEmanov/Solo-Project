@@ -4,8 +4,9 @@ const AllLists = require('../views/AllLists');
 const renderTemplate = require('../lib/renderTemplate');
 const { Shablon, User } = require("../../db/models");
 const ShowShablon = require("../views/ShowShablon")
+const isAuth = require('../middlewares/isAuth');
 
-router.get('/', async (req, res) => {
+router.get('/', isAuth, async (req, res) => {
   try {
     const Coopers = await Shablon.findAll({ raw: true })
     Coopers.forEach((el) => {
