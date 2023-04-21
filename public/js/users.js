@@ -82,11 +82,13 @@ addUserButton.addEventListener('click', (event) => {
 
   // добавляем кнопки "Добавить" и "Отмена"
   const addButton = document.createElement('button');
+  addButton.className = "addbtn"
   addButton.setAttribute('type', 'submit');
   addButton.textContent = 'Добавить';
   form.appendChild(addButton);
 
   const cancelButton = document.createElement('button');
+  cancelButton.className = "canselBtn"
   cancelButton.setAttribute('type', 'button');
   cancelButton.textContent = 'Отмена';
   cancelButton.addEventListener('click', () => {
@@ -234,8 +236,10 @@ resetPasswordButtons.forEach((button) => {
     userLabel.innerText = `Пользователь: ${userName} `;
 
     const submitButton = document.createElement('button');
+    submitButton.className = "rePassword";
     submitButton.innerText = 'Переназначить пароль';
     const cancelButton = document.createElement('button');
+    cancelButton.className = "canselBtn";
     cancelButton.innerText = 'Отмена';
 
     modal.appendChild(userLabel); // добавляем имя пользователя в модальное окно
