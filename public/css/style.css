@@ -1,8 +1,75 @@
+
+body {
+    background-color: #F5F5F5;
+    font-family: 'Roboto';
+}
+
 .navigation {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+.listContainer {
+    padding-left: 100px;
+    padding-top: 100px;
+}
+.myListsAdapt {
+    font-family: 'Roboto Slab'; 
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 140%;
+}
+.createShablonBtn {
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 140%;
+color: #FFFFFF;
+    text-decoration: none;
+    /* margin-left: 45px; */
+   padding: 20px;
+   padding-left: 50px;
+   padding-right: 50px;
+   margin-bottom: 100px;
+    
+    
+}
+.createShablonDiv {
+    width: 228px;
+    height: 60px;    
+    background: #7EB515;
+    border-radius: 50px;
+}
+.employeeList {
+    display: flex;
+    flex-direction: column;
+    padding-left: 17px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}
+.oneEmployeeList {
+    display: flex;
+
+}
+.ListBtn {
+width: 150px;
+height: 50px;
+background: #dde1ec;
+border-radius: 20px; 
+margin-right: 10px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 15px;
+color: #000000;
+border: 0px solid #000000;
 }
 
 .logo {
