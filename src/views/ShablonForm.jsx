@@ -7,7 +7,7 @@ module.exports = function ShablonForm({ el }) {
       <form name="BackFromShablon">
         <div className="shablonShow"><br />
             <div className="greetings">
-            Привет, {el.employee} <br />
+            Привет, {el.employee}🤝 <br /><br />
             И добро пожаловать в команду Высокогорья!
             <br />
             Впереди нас ждет интересное путешествие в мир нашей
@@ -62,12 +62,14 @@ module.exports = function ShablonForm({ el }) {
             Классного путешествия! <br /> Команда Высокой горы 💚
             </div><br />
             <form name="backtoall">
-            <div className="backtoalllist">
-                <button className="BackBtn">Показать все листы</button>
-            </div>
-            <div className="BackToMyLists">
-                <button className="BackToMyListsBtn">Вернуться к моим листам</button>
-            </div>
+                <div className="flexshowbtn">
+                    <div className="backtoalllist">
+                        <button className="BackBtn">Показать все листы</button>
+                    </div>
+                    <div className="BackToMyLists">
+                        <button className="BackToMyListsBtn">Вернуться к моим листам</button>
+                    </div>
+                </div>
             </form>
             </div>
         </div>
