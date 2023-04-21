@@ -191,21 +191,24 @@ deleteUserButtons.forEach((deleteUserButton) => {
   deleteUserButton.addEventListener('click', async (event) => {
     const userName = event.target.parentNode.querySelector('.name').textContent;
 
-    try {
-      const response = await fetch(`/users/${userName}`, {
-        method: 'DELETE',
-      });
+    if (confirm(`Вы уверены, что хотите удалить пользователя "${userName}"?`)) {
+      try {
+        const response = await fetch(`/users/${userName}`, {
+          method: 'DELETE',
+        });
 
-      if (response.status === 204) {
-        event.target.parentNode.remove();
-      } else {
-        console.log('Failed to delete user.');
+        if (response.status === 204) {
+          event.target.parentNode.remove();
+        } else {
+          console.log('Failed to delete user.');
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   });
 });
+
 
 //! НЕ МОГУ ПОЛУЧИТЬ id кнопки! У меня жопа горит!!!!!!!!
 
@@ -227,36 +230,40 @@ resetPasswordButtons.forEach((button) => {
     input.setAttribute('type', 'password');
     input.setAttribute('id', 'newPasswordInput');
 
+    const userLabel = document.createElement('label');
+    userName = event.target.parentNode.firstChild.textContent
+    userLabel.innerText = `Пользователь: ${userName} `;
+
     const submitButton = document.createElement('button');
     submitButton.innerText = 'Переназначить пароль';
 
+    modal.appendChild(userLabel); // добавляем имя пользователя в модальное окно
     modal.appendChild(label);
     modal.appendChild(input);
     modal.appendChild(submitButton);
     modalWrapper.appendChild(modal);
 
-    // Найти ближайшего родительского элемента типа "li"
     const li = event.target.closest('li');
     li.appendChild(modalWrapper);
 
     submitButton.addEventListener('click', async () => {
       try {
         const newPassword = input.value;
-        const userId = li.dataset.userId;
 
-        const response = await fetch(`/users/${userId}/reset-password`, {
+        const response = await fetch(`/users/${userName}/reset-password`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            newPassword,
+            password: newPassword,
+            name: userName, // передаем имя пользователя в запрос
           }),
         });
 
         const updatedUser = await response.json();
 
-        document.body.removeChild(modalWrapper);
+        modalWrapper.remove(); // удаляем модальное окно
       } catch (error) {
         console.log(error);
       }

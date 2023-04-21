@@ -75,28 +75,29 @@ router.delete('/:name', async (req, res) => {
   }
 });
 
-router.put('/:userId/reset-password', async (req, res) => {
+router.put('/:userName/reset-password', async (req, res) => {
   try {
-    const { userId } = req.params;
-    const { newPassword } = req.body;
+    const { userName } = req.params;
+    const { password } = req.body;
 
-    const user = await User.findByPk(userId);
+    const user = await User.findOne({ where: { name: userName } });
     if (!user) {
       return res.status(404).send('User not found');
     }
 
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
     await user.update({ password: hashedPassword });
 
     res.json({
       name: user.name,
-      password: newPassword,
+      password: password,
     });
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
   }
 });
+
 
 
 module.exports = router;
