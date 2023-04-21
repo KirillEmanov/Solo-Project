@@ -1,26 +1,25 @@
-
+/* 
 body{
     background: #F5F5F5;
-    padding: 20px;
-}
-
-h1{
-    font-family: Roboto;
-    padding: 20px;
-}
+    padding: 0px;
+} */
 
 .addUserButton{
-    width: 150px;
-    height: 50px;
-    background: #4bf36c;
+    /* width: 150px;
+    height: 50px; */
+    background: #7EB515;
     border-radius: 20px; 
     margin-right: 10px;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    width: 228px;
+    height: 60px;    
+    background: #7EB515;
+    border-radius: 50px;
     border: 0px solid #000000; 
+    color: #FFFFFF;
 }
 form{
     padding: 20px;
@@ -43,6 +42,7 @@ li{
     background: #dde1ec;
     border-radius: 20px; 
     margin-right: 10px;
+    margin-left: 10px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
@@ -54,7 +54,7 @@ li{
 .deleteUserButton{
     width: 200px;
     height: 25px;
-    background: #f9a175;
+    background: #dde1ec;
     border-radius: 20px; 
     margin-right: 10px;
     font-family: 'Roboto';
@@ -99,6 +99,7 @@ li{
 
 .CreateUser{
     padding: 20px;
+    padding-left: 0px;
 }
 
 .addbtn{
@@ -128,4 +129,11 @@ select{
     font-weight: 300;
     font-size: 15px;
     line-height: 130%;
+}
+.usersContainer {
+    padding-left: 100px;
+    padding-top: 100px;
+}
+.usPad {
+    margin-left: -10px;
 }

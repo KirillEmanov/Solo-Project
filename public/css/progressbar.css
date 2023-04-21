@@ -64,7 +64,7 @@ body{
 }
 .progressBar{
     color: rgb(15, 18, 14);
-    height: 35px;
+    height: 50px;
     text-shadow: none;
     box-shadow: none;
     text-shadow: none;
@@ -103,7 +103,7 @@ h1{
 }
 .ShowListBtn{
     width: 150px;
-    height: 35px;
+    height: 50px;
     background: #dde1ec;
     border-radius: 20px; 
     margin-right: 10px;
@@ -114,4 +114,14 @@ h1{
     color: #000000;
     border: 0px solid #000000;
 
+}
+.empText {
+    width: 500px;
+    padding: 10px;
+    margin-left: -26px;
+}
+.allListsOl {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    width: 800px;
 }
