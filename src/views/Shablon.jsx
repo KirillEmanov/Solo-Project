@@ -67,7 +67,7 @@ module.exports = function Shablon({ userSession }) {
         <input type="text" className="form-shablo" name="userId" value={ userSession.userId } style={{ display: 'none' }}/>
         </div>
         <button type="submit" className="createShablon">Создать шаблон</button>
-      </div>
+      </div><br />
       </form>
       <form name="returnToMyLists">
       <button type="submit" className="returnToMyListsBtn">Мои листки</button>
