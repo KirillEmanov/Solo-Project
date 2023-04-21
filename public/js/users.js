@@ -209,55 +209,57 @@ deleteUserButtons.forEach((deleteUserButton) => {
 
 //! НЕ МОГУ ПОЛУЧИТЬ id кнопки! У меня жопа горит!!!!!!!!
 
-// const resetPasswordButtons = document.querySelectorAll('.resetPasswordButton');
+const resetPasswordButtons = document.querySelectorAll('.resetPasswordButton');
 
-// resetPasswordButtons.forEach((button) => {
-//   button.addEventListener('click', async (event) => { // Добавить параметр event
-//     const modalWrapper = document.createElement('div');
-//     modalWrapper.classList.add('modalWrapper');
+resetPasswordButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    const modalWrapper = document.createElement('div');
+    modalWrapper.classList.add('modalWrapper');
 
-//     const modal = document.createElement('div');
-//     modal.classList.add('modal');
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
 
-//     const label = document.createElement('label');
-//     label.setAttribute('for', 'newPasswordInput');
-//     label.innerText = 'Введите новый пароль:';
+    const label = document.createElement('label');
+    label.setAttribute('for', 'newPasswordInput');
+    label.innerText = 'Введите новый пароль:';
 
-//     const input = document.createElement('input');
-//     input.setAttribute('type', 'password');
-//     input.setAttribute('id', 'newPasswordInput');
+    const input = document.createElement('input');
+    input.setAttribute('type', 'password');
+    input.setAttribute('id', 'newPasswordInput');
 
-//     const submitButton = document.createElement('button');
-//     submitButton.innerText = 'Переназначить пароль';
+    const submitButton = document.createElement('button');
+    submitButton.innerText = 'Переназначить пароль';
 
-//     modal.appendChild(label);
-//     modal.appendChild(input);
-//     modal.appendChild(submitButton);
-//     modalWrapper.appendChild(modal);
-//     document.body.appendChild(modalWrapper);
+    modal.appendChild(label);
+    modal.appendChild(input);
+    modal.appendChild(submitButton);
+    modalWrapper.appendChild(modal);
 
-//     submitButton.addEventListener('click', async () => {
-//       try {
-//         const newPassword = input.value;
-//         const li = event.target.closest('li'); // Исправить здесь
-//         const userId = li.dataset.userId;
-//         console.log('ID=====>>>>>', userId);
-//         const response = await fetch(`/users/${userId}/reset-password`, {
-//           method: 'PUT',
-//           headers: {
-//             'Content-Type': 'application/json',
-//           },
-//           body: JSON.stringify({
-//             newPassword,
-//           }),
-//         });
-//         console.log('newPassword=====>>>>>', newPassword);
-//         const updatedUser = await response.json();
+    // Найти ближайшего родительского элемента типа "li"
+    const li = event.target.closest('li');
+    li.appendChild(modalWrapper);
 
-//         document.body.removeChild(modalWrapper);
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     });
-//   });
-// });
+    submitButton.addEventListener('click', async () => {
+      try {
+        const newPassword = input.value;
+        const userId = li.dataset.userId;
+
+        const response = await fetch(`/users/${userId}/reset-password`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            newPassword,
+          }),
+        });
+
+        const updatedUser = await response.json();
+
+        document.body.removeChild(modalWrapper);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
+});
