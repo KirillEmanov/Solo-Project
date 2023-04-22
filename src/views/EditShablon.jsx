@@ -19,8 +19,7 @@ module.exports = function EditShablon({ el }) {
             <div>
             <h4>Нужно подготовить твое рабочее место:</h4> 
             <div className="check">
-            <div><input type="checkbox" name="task1"  defaultChecked={el.task1} /> Наставник выдал мне пропуск</div>
-            </div> 
+            <div><input type="checkbox" name="task1"  defaultChecked={el.task1} />Наставник выдал мне пропуск</div>
             <div className="check">
             <div><input type="checkbox" name="task2" defaultChecked={el.task2} />Наставник сообщил пароль от Wi-Fi</div>
             </div>
@@ -41,7 +40,7 @@ module.exports = function EditShablon({ el }) {
             <div><input type="checkbox" name="task7" defaultChecked={el.task7} />Ты написал(-а) сообщение в командный чат</div>
             </div>
             <div className="check">
-                <div>Напиши имена трех твоих коллег по отделу: <input type="text" name="task8" defaultValue={el.task8}/>
+              <div>Напиши имена трех твоих коллег по отделу: <input type="text" name="task8" defaultValue={el.task8}/>
             </div>
             <h4>Важно пройти оформление в отделе кадров:</h4> 
             <div className="check">
@@ -59,7 +58,7 @@ module.exports = function EditShablon({ el }) {
             </div><br />
             Классного путешествия! <br /> Команда Высокой горы 💚
             </div><br />
-            <button type="submit" className="createShablon">Редактировать запись</button>
+            </div>
             </div>
         </div>
       </form>
