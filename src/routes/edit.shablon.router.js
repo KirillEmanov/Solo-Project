@@ -21,21 +21,9 @@ router.put('/edit.shablon/:id', async (req, res) => {
   try {
     // console.log(req.body);
     const shablonEdit = await Shablon.findOne({ where: { id: req.params.id } });
-    const { task1, task2, task3, task4, task5, task6, task7, task8, task9, task10, task11, task12 } = req.body;
-    shablonEdit.task1 = task1;
+    const { name, value } = req.body;
+    shablonEdit[name] = value;
     console.log("🚀🚀🚀🚀🚀 ~ shablonEdit:", shablonEdit)
-    
-    shablonEdit.task2 = task2;
-    shablonEdit.task3 = task3;
-    shablonEdit.task4 = task4;
-    shablonEdit.task5 = task5;
-    shablonEdit.task6 = task6;
-    shablonEdit.task7 = task7;
-    shablonEdit.task8 = task8;
-    shablonEdit.task9 = task9;
-    shablonEdit.task10 = task10;
-    shablonEdit.task11 = task11;
-    shablonEdit.task12 = task12;
     shablonEdit.save();
     res.sendStatus(200)
   } catch (error) {
